@@ -19,6 +19,14 @@ public class HoaDon {
 		this.soLuong = soLuong;
 	}
 	
+	public HoaDon(HoaDon hd) {
+	    if (hd != null) {
+	        this.maHD = new String(hd.maHD);
+	        this.sanPham = new SanPham(hd.sanPham); // Copy deep tránh trùng ô nhớ
+	        this.soLuong = hd.soLuong;
+	    }
+	}
+	
 	public void nhap(Scanner sc, SanPham dsSP[]) {
 		System.out.println("Nhap ma hoa don: ");
 		this.maHD = sc.nextLine();
@@ -58,11 +66,15 @@ public class HoaDon {
 	
 	@Override
 	public String toString() {
-		return String.format("Hoa don: %s\nSan pham: %s\nSo luong: %d\nTong tien: %,.0lf",this.maHD, this.sanPham.layTen(), this.tinhTongTien());
+	    return "Ma HD: " + this.maHD + " | San pham: " + this.sanPham.layTen() + " | So luong: " + this.soLuong + " | Tong tien: " + this.tinhTongTien();
 	}
 	
 	public void hienThi() {
-		System.out.println(this);
+		System.out.println(this.toString());
+	}
+	
+	public String layHD() {
+		return this.maHD;
 	}
 	
 }

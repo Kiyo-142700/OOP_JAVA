@@ -43,11 +43,11 @@ public class SanPham {
 	
 	@Override
     public String toString() {
-        return String.format("Ma SP: %s, Ten SP: %s, Don gia: %,.0f đ\n", maSP, tenSP, donGia);
+        return "Ma SP: "+ maSP + " | Ten SP: " + tenSP + " | Don gia: "   + donGia;
     }
 	
 	public void hienThi() {
-		System.out.print(this);
+		System.out.println(this.toString());
 	}
 	
 	public double tinhTienGiamGia(double phanTramGiam) {
