@@ -92,8 +92,8 @@ public class SinhVien implements Comparable<SinhVien>{// bản hợp đồng
 		.append("\nngay sinh: ").append(this.ngaysinh)
 		.append("\nso luong hoc phan dang ky: ").append(this.soluonghp)
 		.append("\nten hp va diem: \n");
-		for(int i = 0; i < this.soluonghp; i++) {
-			result.append(this.tenhp[i]).append(" || ").append(this.diemhp[i] == null? "chua nhap" : this.diemhp[i]).append("\n");
+		for(int i = 0; i < this.soluonghp; i++) {// %-20s de can le neu ko co - thi can phai
+			result.append(String.format("%-20s | ", this.tenhp[i])).append(this.diemhp[i] == null? "chua nhap" : this.diemhp[i]).append("\n");
 		}
 		return result.toString();
 	}

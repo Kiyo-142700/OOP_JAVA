@@ -15,18 +15,19 @@ public class Diem {
 		this.y = y;
 	}
 	
-	public void nhapDiem() {
-		Scanner sc = new Scanner(System.in);
+	public void nhapDiem(Scanner sc) {
 		System.out.println("Nhap vao toa do diem x:");
 		this.x = sc.nextInt();
 		System.out.println("Nhap vao toa do diem y:");
 		this.y = sc.nextInt();
+		sc.nextLine();
 	}
 	
 	public void hienThi() {
 		System.out.println("(" + this.x + ", " + this.y + ")");
 	}
 	
+	@Override
 	public String toString() {
 		return "(" + this.x + ", " + this.y + ")";
 	}
